@@ -1,0 +1,31 @@
+/* General */
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background-color: #10161D;
+    color: #fff;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    color: #1ED5FF;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+a:hover {
+    color: #00A8E1;  
+}     
