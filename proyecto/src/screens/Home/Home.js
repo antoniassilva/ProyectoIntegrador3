@@ -11,6 +11,10 @@ function Home() {
             </section>
 
             <SectionDestacada/>
+            <section class="titulo"><h2 class="tituSec">Cartel</h2>
+            <a href="/cartel" >Ver todas</a>
+            </section>
+            <SectionCartel/>
             
 
         </main>
