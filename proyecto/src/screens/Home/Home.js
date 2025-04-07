@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionDestacada from "../../components/SectionDestacada/SectionDestacada"
+import SectionCartel from "../../components/SectionCartel/SectionCartel"
 
 function Home() {
     return (
