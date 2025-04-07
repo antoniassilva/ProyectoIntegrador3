@@ -1,44 +1,44 @@
-import React from "react";
+import React, {Component}from 'react'
 import Destacada from "./Destacada"
 import "./styless.css"
 
-function SeccionDestacada(){
-    const fichasDestacada=[  
-        {
-            id:1,
-            title: 'Computadora',
-            detalle: 'Detalle',
-            text: 'Computadora Mac book pro',
-            fav: 'Favoritos',
-            
-        },
-        {
-            id:2,
-            title: 'Celular',
-            detalle: 'Detalle',
-            text: 'Iphone 15',
-            fav: 'Favoritos',
-            
-        },
-        {
-            id:3,
-            title: 'Audiculares',
-            detalle: 'Detalle',
-            text: 'Audiculares bluetooth Sony',
-            fav: 'Favoritos',
-            
-        },
+class SeccionDestacada extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            peliculas: [],
+           
+        }
+    }
+    componentDidMount() {
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=2aa8547904e3b24a3d305a661689f936')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.results); 
+            this.setState({
+                peliculas: data.results,
+            });
+        })
+        .catch((error) => console.log("Error al traer películas:", error));
+    }
+  
+    render(){
+        return(
+            <>
+             <section className="contenedor">
+             {
+                this.state.peliculas.length === 0 ?
+                <h1>Cargando</h1>
+                :
+                this.state.peliculas.slice(0, 5).map((elm, idx) => <Destacada data={elm} key={idx + elm.title} /> )
 
-
-    ]
-    return (
-        <section className="contenedor destacada">
-        {fichasDestacada.map((elm) => (
-            <Destacada key={elm.id} data={elm} />
-        ))}
-    </section>
-
-    )
+            }
+            </section>
+           
+            </>
+        )
+    }
+    
 }
 
 export default SeccionDestacada
