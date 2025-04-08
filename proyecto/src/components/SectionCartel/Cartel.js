@@ -22,29 +22,32 @@ class Cartel extends Component{
     return(
       <article className="elementos letraPrincipal">
     <h3>{this.state.data.title}</h3>
+    <img
+          src={`https://image.tmdb.org/t/p/w342${this.state.data.poster_path}`}
+         
+          className="imagen"
+        />
     {
       this.state.mostrarContenido=== true?
       <>
-        <p>{this.state.data.text}</p>
+        <p>{this.state.data.overview}</p>
       </>
       :
       ''
 
     }
 
-    <Link className="enlace" to={`/detalle/${this.state.data.id}`}>
-                    <p>{this.state.data.detalle}</p>
-    </Link>
-
-    <Link className="enlace" to={`/favoritas`}>
-    <p>{this.state.data.fav}</p>
-    </Link>
-
     <button onClick= {()=> this.ocultar()}> Ver descripcion  </button>
+
+    <Link className="enlace" to={`/detalle/${this.state.data.id}`}>
+                    <p>detalle</p>
+    </Link>
     
     </article>
 
     )
   }
 }
+
+
 export default Cartel
