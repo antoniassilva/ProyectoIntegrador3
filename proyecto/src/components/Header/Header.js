@@ -26,10 +26,6 @@ function Header() {
         <header>
              <div class="logo">🎬 Netflix</div>
             <nav><OpcionesMenu data={opciones} /></nav>
-            <form action="/busqueda" method="GET" class="search-form">
-            <input type="text" placeholder="Buscar..."></input>
-            
-            </form>
         </header>
         
         

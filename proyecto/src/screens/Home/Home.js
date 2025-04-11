@@ -1,10 +1,12 @@
 import React from 'react'
 import SectionDestacada from "../../components/SectionDestacada/SectionDestacada"
 import SectionCartel from "../../components/SectionCartel/SectionCartel"
+import FiltroHome from "../../components/Busqueda/FiltroHome"
 
 function Home() {
     return (
         <React.Fragment>
+            <FiltroHome/>
         <main>
             <section class="titulo">
                 <h2 class="tituSec">Populares</h2> 
