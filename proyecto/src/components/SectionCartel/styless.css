@@ -73,3 +73,22 @@
     margin-top: 5px;
 }
 
+button {
+    background-color: #233547; /* azul vibrante */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  width: fit-content;
+  align-self: center;
+  }
+  
+button:hover {
+    background-color: #135691; /* azul un poco más oscuro */
+    transform: scale(1.03);
+  }
