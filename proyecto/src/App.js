@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer"
 import Populares from "./screens/Populares/populares"
 import Cartel from "./screens/Cartel/cartel"
 import Busqueda from "./screens/Busqueda/Busqueda"
+import Detalle from "./screens/Detalle/Detalle"
 
 
 
@@ -21,7 +22,7 @@ function App() {
         <Route path={'/populares'} component={Populares} />
         <Route path={'/cartel'} component={Cartel} />
         <Route path={'/busqueda'} component={Busqueda} />
-        
+        <Route path={'/detalle/:id'} component={Detalle} />
 
         <Route path={''} component={NotFound} />
       </Switch>

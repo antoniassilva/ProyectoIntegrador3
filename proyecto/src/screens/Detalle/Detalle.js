@@ -11,9 +11,12 @@ class Detalle extends Component {
     };
   }
 
+ 
+
   componentDidMount() {
 
     const idPelicula = this.props.match.params.id;
+    console.log(idPelicula)
 
     fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=2aa8547904e3b24a3d305a661689f936`)
       .then((response) => response.json())
@@ -63,12 +66,11 @@ class Detalle extends Component {
       favorito: false
     })
   }
-
   render() {
 
     return (
       
-      <section className="detalle-container">
+       <section className="detalle-container">
        {
         this.state.pelicula === null ? 
         <p>Cargando...</p> 
@@ -91,6 +93,7 @@ class Detalle extends Component {
                 <li>{genero.name}</li>
               ))}
             </ul>
+           
           {
             this.state.favorito ?
             <button onClick={()=> this.sacarFavorita(this.state.pelicula.id) }>Quitar de Favoritos</button>
@@ -102,9 +105,10 @@ class Detalle extends Component {
         </div>
       </>
 }
-      </section>
-    );
+      </section> 
+    )
   }
 }
 
 export default Detalle;
+
