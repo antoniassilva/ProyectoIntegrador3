@@ -5,8 +5,8 @@ import Favoritas from "./screens/Favoritas/Favoritas";
 import NotFound from "./screens/NotFound/NotFound";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import Populares from "./screens/Populares/Populares"
-import Cartel from "./screens/Cartel/Cartel"
+import Populares from "./screens/Populares/populares"
+import Cartel from "./screens/Cartel/cartel"
 import Busqueda from "./screens/Busqueda/Busqueda"
 
 
