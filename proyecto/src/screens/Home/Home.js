@@ -8,13 +8,13 @@ function Home() {
         <React.Fragment>
             <FiltroHome/>
         <main>
-            <section class="titulo">
-                <h2 class="tituSec">Populares</h2> 
+            <section className="titulo">
+                <h2 className="tituSec">Populares</h2> 
                 <a href="/populares" >Ver todas</a>
             </section>
 
             <SectionDestacada/>
-            <section class="titulo"><h2 class="tituSec">Cartel</h2>
+            <section className="titulo"><h2 className="tituSec">Cartel</h2>
             <a href="/cartel" >Ver todas</a>
             </section>
             <SectionCartel/>

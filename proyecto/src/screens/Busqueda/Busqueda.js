@@ -30,7 +30,7 @@ class Busqueda extends Component {
   render() {
     return (
       <React.Fragment>
-      <section class="titulo"> <h2 class="tituSec">Resultados de búsqueda</h2></section>
+      <section className="titulo"> <h2 className="tituSec">Resultados de búsqueda</h2></section>
       <section className="contenedor">
         {this.state.cargando ? (
           <p>Cargando...</p>

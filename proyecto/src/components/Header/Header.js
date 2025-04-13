@@ -24,7 +24,7 @@ function Header() {
     ]
     return (
         <header>
-             <div class="logo">🎬 Netflix</div>
+             <div className="logo">🎬 Zineo</div>
             <nav><OpcionesMenu data={opciones} /></nav>
         </header>
         

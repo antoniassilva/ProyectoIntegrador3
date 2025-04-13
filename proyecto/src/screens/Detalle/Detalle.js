@@ -90,7 +90,7 @@ class Detalle extends Component {
             <p><strong>Género:</strong></p>
             <ul>
               {this.state.pelicula.genres.map((genero) => (
-                <li>{genero.name}</li>
+                <li key={genero.id}>{genero.name}</li>
               ))}
             </ul>
            

@@ -6,18 +6,31 @@ class Cartel extends Component {
         super(props)
         this.state = {
             peliculas: [],
-            backupPeliculas: []
+            backupPeliculas: [],
+            page:1
         }
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=2aa8547904e3b24a3d305a661689f936')
+       this.cargarPeliculas()
+    }
+
+    cargarPeliculas() {
+    
+    
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=2aa8547904e3b24a3d305a661689f936&page=${this.state.page}`)
         .then((response) => response.json())
-        .then(( data ) => this.setState({
-            peliculas:data.results, 
-            backupPeliculas: data.results
-        }))
-        .catch((error) => console.log(error) )
+        .then((data) => {
+            const peliculasActuales = this.state.peliculas;
+            const peliculasNuevas = data.results;
+            const listaNueva = peliculasActuales.concat(peliculasNuevas);
+            this.setState({
+                peliculas: listaNueva,
+                backupPeliculas: listaNueva,
+                page: this.state.page + 1
+            });
+        })
+        .catch((error) => console.log(error));
     }
 
     filtrarPeliculas(busquedaUsuario){
@@ -44,6 +57,7 @@ class Cartel extends Component {
                 this.state.peliculas.map((elm, idx) => <CartelCard data={elm} key={idx + elm.title} /> )
 
             }
+            <button onClick={()=> this.cargarPeliculas()}>Cargar mas</button>
             </section>
             </>
         )
